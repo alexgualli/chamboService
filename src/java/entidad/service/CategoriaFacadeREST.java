@@ -35,14 +35,14 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
 
     @POST
     @Override
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void create(Categoria entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void edit(@PathParam("id") Integer id, Categoria entity) {
         super.edit(entity);
     }
@@ -55,7 +55,7 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
 
     @GET
     @Path("{id}")
-    @Produces({"application/xml", "application/json"})
+    @Produces("application/json")
     public Categoria find(@PathParam("id") Integer id) {
         return super.find(id);
     }
@@ -69,7 +69,7 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
 
     @GET
     @Path("{from}/{to}")
-    @Produces({"application/xml", "application/json"})
+    @Produces("application/json")
     public List<Categoria> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }

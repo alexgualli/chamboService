@@ -35,14 +35,14 @@ public class ImagenFacadeREST extends AbstractFacade<Imagen> {
 
     @POST
     @Override
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void create(Imagen entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void edit(@PathParam("id") Integer id, Imagen entity) {
         super.edit(entity);
     }
@@ -55,21 +55,21 @@ public class ImagenFacadeREST extends AbstractFacade<Imagen> {
 
     @GET
     @Path("{id}")
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public Imagen find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public List<Imagen> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public List<Imagen> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }

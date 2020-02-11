@@ -35,14 +35,14 @@ public class LugarFacadeREST extends AbstractFacade<Lugar> {
 
     @POST
     @Override
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void create(Lugar entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({"application/xml", "application/json"})
+    @Consumes( "application/json")
     public void edit(@PathParam("id") Integer id, Lugar entity) {
         super.edit(entity);
     }
@@ -55,21 +55,21 @@ public class LugarFacadeREST extends AbstractFacade<Lugar> {
 
     @GET
     @Path("{id}")
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public Lugar find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public List<Lugar> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({"application/xml", "application/json"})
+    @Produces( "application/json")
     public List<Lugar> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
