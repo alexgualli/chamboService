@@ -5,11 +5,13 @@
  */
 package entidad.service;
 
+import com.sun.xml.internal.ws.api.message.Packet;
 import entidad.Categoria;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.jsp.PageContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -18,6 +20,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -31,6 +34,7 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
 
     public CategoriaFacadeREST() {
         super(Categoria.class);
+        
     }
 
     @POST
@@ -39,6 +43,19 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
     public void create(Categoria entity) {
         super.create(entity);
     }
+    
+    /*
+        @POST
+    @Path("create")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response create1(Categoria entity) {
+        super.create(entity);
+        System.out.println(entity);
+         Response.ResponseBuilder builder = Response.status(Response.Status.CREATED);
+          return builder.build();
+    }
+    */
 
     @PUT
     @Path("{id}")

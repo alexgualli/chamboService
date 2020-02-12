@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
  * @author Usuario
  */
 @Stateless
-@Path("entidad.lugar")
+@Path("lugar")
 public class LugarFacadeREST extends AbstractFacade<Lugar> {
     @PersistenceContext(unitName = "chamboPU")
     private EntityManager em;
@@ -38,6 +38,7 @@ public class LugarFacadeREST extends AbstractFacade<Lugar> {
     @Consumes( "application/json")
     public void create(Lugar entity) {
         super.create(entity);
+        System.out.println(entity);
     }
 
     @PUT
